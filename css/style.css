@@ -1,0 +1,80 @@
+@font-face {
+	font-family: "Charter";	
+	src: url("/~mgintz2/css/fonts/Charter Regular.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Charter";	
+	src: url("/~mgintz2/css/fonts/Charter Bold.otf") format("opentype");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Charter";	
+	src: url("/~mgintz2/css/fonts/Charter Italic.otf") format("opentype");
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Charter";	
+	src: url("/~mgintz2/css/fonts/Charter Bold Italic.otf") format("opentype");
+	font-weight: bold;
+	font-style: italic;
+}
+body {
+	font-family: "Charter";
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+#name {
+	margin-top: 0;
+	margin-bottom:0;
+	padding:8px;
+}
+#eight {
+	padding-left: 8px;
+	padding-right: 8px;
+	background-image: url("../background.png");
+	background-size: 20%;
+	padding-top: 0;
+	flex: 1;
+}
+#whitebox {
+	border: 1px solid black;
+	background: white;
+	padding: 8px;
+	margin-bottom: 8px;
+}
+#flag {
+	width:auto;
+	height:.4in;
+	border: 1px solid black;
+}
+#flag-logo {
+	height:.3in;
+	margin:auto;
+}
+#flag-logo-box {
+	display: inline-flex;
+	align-items: center;
+	height:.4in;
+	width:.6in;
+	border: 1px solid black;
+	vertical-align:top;
+}
+tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+td {
+    padding:3px;
+}
+footer {
+	background-color: gray;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
