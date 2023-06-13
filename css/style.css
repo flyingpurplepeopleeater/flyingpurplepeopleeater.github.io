@@ -48,7 +48,7 @@ body {
 	margin: 0 !important;
 	margin-bottom: 8px;
 }
-#item {
+#item blockquote,iframe {
 	margin:auto !important;
 }
 #flag {
