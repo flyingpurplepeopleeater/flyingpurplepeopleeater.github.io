@@ -58,6 +58,20 @@ body {
 	border: 1px solid black;
 	vertical-align:top;
 }
+#eight {
+	padding-left: 8px;
+	padding-right: 8px;
+	background-image: url("../background.png");
+	background-size: 20%;
+	padding-top: 0;
+	flex: 1;
+}
+#whitebox {
+	border: 1px solid black;
+	background: white;
+	padding: 8px;
+	margin-bottom: 8px;
+}
 
 h1 {
 	text-align:center;
