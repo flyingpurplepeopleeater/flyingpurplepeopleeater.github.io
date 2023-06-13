@@ -48,8 +48,11 @@ body {
 	margin: 0 !important;
 	margin-bottom: 8px !important;
 }
-#item blockquote,iframe {
+#item blockquote,iframe,a {
 	margin:auto !important;
+}
+#item {
+	text-align:center;
 }
 #flag {
 	width:auto;
