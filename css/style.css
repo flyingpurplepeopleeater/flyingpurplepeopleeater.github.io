@@ -35,19 +35,6 @@ body {
 	margin-bottom:0;
 	padding:8px;
 }
-#eight {
-	padding-left: 8px;
-	padding-right: 8px;
-	padding-top: 0;
-	flex: 1;
-}
-#whitebox {
-	border: 1px solid black;
-	background: white;
-	padding: 8px;
-	margin: 0 !important;
-	margin-bottom: 8px !important;
-}
 #item blockquote,iframe,a {
 	margin:auto !important;
 }
