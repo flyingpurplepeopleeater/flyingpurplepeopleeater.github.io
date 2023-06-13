@@ -77,11 +77,10 @@ body {
 h1 {
 	text-align:center;
 }
-/*
-tr:nth-child(even) {
-    background-color: #eeeeee;
+
+div#item a img {
+	border:1px solid black;
 }
-*/
 
 td {
     padding:3px;
