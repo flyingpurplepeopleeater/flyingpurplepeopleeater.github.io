@@ -71,7 +71,7 @@ body {
 	border: 1px solid black;
 	vertical-align:top;
 }
-.flickr iframe {
+.flickr html {
 	border:1px solid black;
 }
 h1 {
