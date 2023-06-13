@@ -45,7 +45,11 @@ body {
 	border: 1px solid black;
 	background: white;
 	padding: 8px;
+	margin: 0 !important;
 	margin-bottom: 8px;
+}
+#item {
+	margin:auto !important;
 }
 #flag {
 	width:auto;
@@ -67,9 +71,11 @@ body {
 h1 {
 	text-align:center;
 }
-/*tr:nth-child(even) {
+/*
+tr:nth-child(even) {
     background-color: #eeeeee;
-}*/
+}
+*/
 
 td {
     padding:3px;
@@ -88,7 +94,4 @@ footer {
 	position: absolute;
 	width: 100%;
 	bottom: 0;
-}
-blockquote {
-	align:center;
 }
