@@ -67,15 +67,28 @@ body {
 h1 {
 	text-align:center;
 }
-tr:nth-child(even) {
+/*tr:nth-child(even) {
     background-color: #eeeeee;
-}
+}*/
+
 td {
     padding:3px;
+}
+
+td:first-child {
+    text-align: right;
+}
+table {
+	border: 1px solid black;
+	padding: 4px;
+	margin: auto;
 }
 footer {
 	background-color: gray;
 	position: absolute;
 	width: 100%;
 	bottom: 0;
+}
+blockquote {
+	align:center;
 }
