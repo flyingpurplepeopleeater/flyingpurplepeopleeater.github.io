@@ -58,8 +58,8 @@ body {
 	vertical-align:top;
 }
 #eight {
-	padding-left: 8px;
-	padding-right: 8px;
+	padding-left: 0px;
+	padding-right: 0px;
 	background-image: url("../background.png");
 	background-size: 20%;
 	padding-top: 0;
