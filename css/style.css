@@ -25,8 +25,9 @@
 body {
 	font-family: "Charter";
 	margin: 0;
-	padding: 0 16px;
+	padding: 0 8px;
 	height: 100vh;
+	display: flex;
 	flex-direction: column;
 }
 #name {
@@ -58,10 +59,10 @@ body {
 	vertical-align:top;
 }
 #eight {
-	padding-left: 0px;
-	padding-right: 0px;
-	background-image: url("../background.png");
-	background-size: 20%;
+	padding-left: 8px;
+	padding-right: 8px;
+	/*background-image: url("../background.png");
+	background-size: 20%;*/
 	padding-top: 0;
 	flex: 1;
 }
@@ -69,11 +70,7 @@ body {
 	border: 1px solid black;
 	background: white;
 	padding: 8px;
-	margin-bottom: 8px;
-}
-
-h1 {
-	text-align:center;
+	margin-bottom: 16px;
 }
 
 td {
