@@ -213,15 +213,34 @@ footer {
 	width:calc(100% - 2px);
 	height:auto;
 	border: 1px solid black;
-	margin-top:0;
+	margin:auto;
+}
+
+#scenicphotobig {
+	width:calc(100% - 2px);
+	height:auto;
+	border: 1px solid black;
+	margin:auto;
 }
 
 #photobox {
 	margin-bottom:8px;
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:column;
 }
 
 #photoboxbig {
 	margin-bottom:8px;
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:column;
+}
+
+#resizer {
+	background:black;
+	flex:1;
+	display:flex;
 }
 
 div:nth-last-child(-n+3)#photobox {
