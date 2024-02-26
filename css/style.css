@@ -159,6 +159,11 @@ footer {
   }
 }
 
+.quotecontent {
+	display:grid;
+	grid-template-rows: auto auto auto auto auto 1fr;
+}
+
 #quote-author {
 	text-align:right;
 	font-size:14px;
@@ -185,6 +190,8 @@ footer {
 	width:100%;
 	justify-self:right;
 	text-align:right;
+	display:flex;
+	align-self:flex-end;
 }
 
 #cleartitle {
@@ -259,10 +266,11 @@ div:nth-last-child(-n+3)#photoboxbig {
 	display: none;
 }
 
-@media (min-width: 1200px) or ((min-width: 600px) and (not (min-width: 800px))) {
+@media (min-width: 600px) {
 
 .photocontent {
 grid-template-columns: 1fr 1fr;
+grid-template-rows: auto auto 1fr;
 }
 
 #paritycounter {
@@ -308,6 +316,12 @@ div:nth-last-child(-n+4)#photoboxbig {
 }
 
 }
+
+#space {
+	flex:1;
+}
+
+
 
 
 
