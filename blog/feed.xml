@@ -1,0 +1,17 @@
+<rss version="2.0">
+<channel>
+<title>Blog - Michael Gintz</title>
+<link>https://mgintz.com/blog</link>
+<description>
+Michael Gintz's blog
+</description>
+<!--
+<item>
+<title>Post</title>
+<description>A blog post</description>
+<link>https://mgintz.com/blog/post-111024</link>
+<pubDate>Mon, 10 Nov 2024 06:00:00 GMT</pubDate>
+</item>
+-->
+</channel>
+</rss>
