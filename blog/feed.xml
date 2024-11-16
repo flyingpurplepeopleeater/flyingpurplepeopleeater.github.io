@@ -5,13 +5,11 @@
 <description>
 Michael Gintz's blog
 </description>
-<!--
 <item>
 <title>Post</title>
 <description>A blog post</description>
-<link>https://mgintz.com/blog/post-111024</link>
-<pubDate>Mon, 10 Nov 2024 06:00:00 GMT</pubDate>
+<link>https://mgintz.com/blog/post-111524</link>
+<pubDate>Mon, 15 Nov 2024 06:00:00 GMT</pubDate>
 </item>
--->
 </channel>
 </rss>
