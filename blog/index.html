@@ -4,7 +4,6 @@
         <meta charset="utf-8" />
         <title>Protected Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="../css/style.css" type="text/css"/>
 
         <!-- do not cache this page -->
         <meta http-equiv="cache-control" content="max-age=0" />
@@ -14,11 +13,156 @@
         <meta http-equiv="pragma" content="no-cache" />
 
         <style>
-            .staticrypt-decrypt-button {
+            .staticrypt-hr {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                border: 0;
+                border-top: 1px solid #eee;
+            }
+
+            .staticrypt-page {
+                width: 360px;
+                padding: 8% 0 0;
+                margin: auto;
+                box-sizing: border-box;
+            }
+
+            .staticrypt-form {
+                position: relative;
+                z-index: 1;
+                background: #ffffff;
+                max-width: 360px;
+                margin: 0 auto 100px;
+                padding: 45px;
+                text-align: center;
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            }
+
+            .staticrypt-form input[type="password"],
+            input[type="text"] {
+                background: inherit;
+                border: 0;
+                box-sizing: border-box; /* This ensures padding is included in the total width */
+                font-size: 14px;
+                outline: 0;
+                padding: 15px 30px 15px 15px; /* Adjust the padding to ensure there is space for the icon */
+                width: 100%;
+            }
+
+            .staticrypt-password-container {
+                position: relative;
+                outline: 0;
+                background: #f2f2f2;
+                width: 100%;
+                border: 0;
+                margin: 0 0 15px;
+                box-sizing: border-box;
+            }
+
+            .staticrypt-toggle-password-visibility {
+                cursor: pointer;
+                height: 20px;
+                opacity: 60%;
+                padding: 13px;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+            }
+
+            .staticrypt-form .staticrypt-decrypt-button {
+                text-transform: uppercase;
+                outline: 0;
+                background: #4CAF50;
+                width: 100%;
+                border: 0;
+                padding: 15px;
+                color: #ffffff;
+                font-size: 14px;
                 cursor: pointer;
             }
+
+            .staticrypt-form .staticrypt-decrypt-button:hover,
+            .staticrypt-form .staticrypt-decrypt-button:active,
+            .staticrypt-form .staticrypt-decrypt-button:focus {
+                background: #4CAF50;
+                filter: brightness(92%);
+            }
+
+            .staticrypt-html {
+                height: 100%;
+            }
+
+            .staticrypt-body {
+                height: 100%;
+                margin: 0;
+            }
+
+            .staticrypt-content {
+                height: 100%;
+                margin-bottom: 1em;
+                background: #76B852;
+                font-family: "Arial", sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            .staticrypt-instructions {
+                margin-top: -1em;
+                margin-bottom: 1em;
+            }
+
+            .staticrypt-title {
+                font-size: 1.5em;
+            }
+
+            label.staticrypt-remember {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1em;
+            }
+
+            .staticrypt-remember input[type="checkbox"] {
+                transform: scale(1.5);
+                margin-right: 1em;
+            }
+
             .hidden {
                 display: none !important;
+            }
+
+            .staticrypt-spinner-container {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .staticrypt-spinner {
+                display: inline-block;
+                width: 2rem;
+                height: 2rem;
+                vertical-align: text-bottom;
+                border: 0.25em solid gray;
+                border-right-color: transparent;
+                border-radius: 50%;
+                -webkit-animation: spinner-border 0.75s linear infinite;
+                animation: spinner-border 0.75s linear infinite;
+                animation-duration: 0.75s;
+                animation-timing-function: linear;
+                animation-delay: 0s;
+                animation-iteration-count: infinite;
+                animation-direction: normal;
+                animation-fill-mode: none;
+                animation-play-state: running;
+                animation-name: spinner-border;
+            }
+
+            @keyframes spinner-border {
+                100% {
+                    transform: rotate(360deg);
+                }
             }
         </style>
     </head>
@@ -28,16 +172,16 @@
             <div class="staticrypt-spinner"></div>
         </div>
 
-        <div id="staticrypt_content" class="staticrypt-content hidden"><header>
-            <h1 id="name" style="padding-bottom:0px;">Michael Gintz</h1>
-            <h3 id="name"style="padding-top:0px;">Blog</h3>
-            </header>
-            
-            <div id="eight">
-            <div id="whitebox">
-            This post is password-protected.<br /><br />
+        <div id="staticrypt_content" class="staticrypt-content hidden">
             <div class="staticrypt-page">
                 <div class="staticrypt-form">
+                    <div class="staticrypt-instructions">
+                        <p class="staticrypt-title">Protected Page</p>
+                        <p></p>
+                    </div>
+
+                    <hr class="staticrypt-hr" />
+
                     <form id="staticrypt-form" action="#" method="post">
                         <div class="staticrypt-password-container">
                             <input
@@ -46,32 +190,30 @@
                                 name="password"
                                 placeholder="Password"
                                 autofocus
-                            />&nbsp;
+                            />
+
                             <img
-                                class="staticrypt-toggle-password-visibility hidden"
-                                alt="template_toggle_show"
-                                title="template_toggle_show"
+                                class="staticrypt-toggle-password-visibility"
+                                alt="Show password"
+                                title="Show password"
                                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNS4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTM4LjggNS4xQzI4LjQtMy4xIDEzLjMtMS4yIDUuMSA5LjJTLTEuMiAzNC43IDkuMiA0Mi45bDU5MiA0NjRjMTAuNCA4LjIgMjUuNSA2LjMgMzMuNy00LjFzNi4zLTI1LjUtNC4xLTMzLjdMNTI1LjYgMzg2LjdjMzkuNi00MC42IDY2LjQtODYuMSA3OS45LTExOC40YzMuMy03LjkgMy4zLTE2LjcgMC0yNC42Yy0xNC45LTM1LjctNDYuMi04Ny43LTkzLTEzMS4xQzQ2NS41IDY4LjggNDAwLjggMzIgMzIwIDMyYy02OC4yIDAtMTI1IDI2LjMtMTY5LjMgNjAuOEwzOC44IDUuMXpNMjIzLjEgMTQ5LjVDMjQ4LjYgMTI2LjIgMjgyLjcgMTEyIDMyMCAxMTJjNzkuNSAwIDE0NCA2NC41IDE0NCAxNDRjMCAyNC45LTYuMyA0OC4zLTE3LjQgNjguN0w0MDggMjk0LjVjOC40LTE5LjMgMTAuNi00MS40IDQuOC02My4zYy0xMS4xLTQxLjUtNDcuOC02OS40LTg4LjYtNzEuMWMtNS44LS4yLTkuMiA2LjEtNy40IDExLjdjMi4xIDYuNCAzLjMgMTMuMiAzLjMgMjAuM2MwIDEwLjItMi40IDE5LjgtNi42IDI4LjNsLTkwLjMtNzAuOHpNMzczIDM4OS45Yy0xNi40IDYuNS0zNC4zIDEwLjEtNTMgMTAuMWMtNzkuNSAwLTE0NC02NC41LTE0NC0xNDRjMC02LjkgLjUtMTMuNiAxLjQtMjAuMkw4My4xIDE2MS41QzYwLjMgMTkxLjIgNDQgMjIwLjggMzQuNSAyNDMuN2MtMy4zIDcuOS0zLjMgMTYuNyAwIDI0LjZjMTQuOSAzNS43IDQ2LjIgODcuNyA5MyAxMzEuMUMxNzQuNSA0NDMuMiAyMzkuMiA0ODAgMzIwIDQ4MGM0Ny44IDAgODkuOS0xMi45IDEyNi4yLTMyLjVMMzczIDM4OS45eiIvPjwvc3ZnPg=="
-                            /><br><br>
-                        <label id="staticrypt-remember-label" class="staticrypt-remember">
+                            />
+                        </div>
+
+                        <label id="staticrypt-remember-label" class="staticrypt-remember hidden">
                             <input id="staticrypt-remember" type="checkbox" name="remember" />
                             Remember me
-                        </label>&nbsp;&nbsp;
+                        </label>
 
-                        <input type="submit" class="staticrypt-decrypt-button" value="Log in" />
-                    </div>
+                        <input type="submit" class="staticrypt-decrypt-button" value="DECRYPT" />
                     </form>
                 </div>
-                 <div id="more"><div id="space"></div><a href="..">go back</a></div>
-            </div>
-            </div>
             </div>
         </div>
 
         <script>
             // these variables will be filled when generating the file - the template format is 'variable_name'
-            const staticryptInitiator = 
-            ((function(){
+            const staticryptInitiator = ((function(){
   const exports = {};
   const cryptoEngine = ((function(){
   const exports = {};
@@ -667,12 +809,11 @@ exports.init = init;
 
   return exports;
 })());
-        ;
-            const templateError = "template_error",
-                templateToggleAltShow = "template_toggle_show",
-                templateToggleAltHide = "template_toggle_hide",
-                isRememberEnabled = true,
-                staticryptConfig = {"staticryptEncryptedMsgUniqueVariableName":"ca1ec9f59f6e82fbc1a925dbd49a731d5cf121f9ba274ddeb5e9e6a112cb26bdd26582138ad24088e062504e0418661e0ab1aef1c8487683bff7fe7f9bd5ee4e8bf0836e586f689e0d9ec4713f5cc9030dd35c4a7c365c1d3867fe770eadbb4c98e5d4980d626a71a0ee102e611e44ce0b6df961f7ea9059b3a0a55027e2f6d8b0c293d58eac66651138fe95169072ebace7f8be5575a8c97526e216bac3ab93ecc69561951ad7659ddcea834437c4ba4b9914c81321b84eda0b9804b116579152aec31909d58e0ceec1c189420c1ccb18e32fb44dd66bed57508cafd2c3580a1e13a3aca64e5fc78ffbd03da6ab0cdeb0d0280cf40e041fdfcc1de4d2f09e3385782e515217d0784b8d0998055226ce1e6a861ec06b23f71bc58e16cbac7c1d2853619501c12718ef101304e59098b1633781ffb6c939d59c3f49893b685410906fe6a4ab378d8936657a8843faba9a0b0d36e20d51f562110ea074bae2f6f4b4239cdf15e9b0440d82b9031ecbe70f11e8d5f584a1b38b3fadebd29fe861b8ec8a293b8333ff12e80072998bd7ec597c08462cc21e9b09a68cdf0207c1fe8bbceb6e6628e42d4cc25628d0a72c1ca52ebfd50959446fb733d1b3a4e4f0a521d60f1dd8b9f79797186109460a789dee35b5a71b3810e03d1268728270e0ff6a66384af2a3de54a2a4cd7167f050f59d8628f1c92c2138d28f00ec2d3ad284b1bf075ed4fe67718e47147743371269f2a55d166e2ba92b0f2bf367a137bc4081ae73782eb6c9d138a23f7cbe131842cf9dbcca3c8aaca4f683905e437281b4f7177ce8f271f32d0da80ddaa2078b0585369391e1c476b5abd6cc0fd41c9fdfe68036406bd85740efbd0866af5ea18f73e8c9e0f9609ec40b1844a1894d72370941e362a1da15b10feee794ad8e8fc5c8c4256367d159ae2bf6a428d9e699103f6a095122259cc25f573defcb4e75f5e227bf1576894555efe1643349519896ac299f0ce7d0d3c23035f1853af455d64403ca5db9cd86645fe6fb665e05dbdfc2935fb8ae28f831464ee5af73bdde05d1c5916e4252fdd28e9322e2a750e5286449a61df83e6a49dc0e2258cb243d950b6557b8159e1575dda4964f6696ff30796a73f17fe5b4b89d3671e700d0f9dc5d483e2f24805c89742b935dccdcfcf9ce","isRememberEnabled":true,"rememberDurationInDays":0,"staticryptSaltUniqueVariableName":"a51c4410d44aa3bddae6e0480d8badcd"};
+            const templateError = "Bad password!",
+                templateToggleAltShow = "Show password",
+                templateToggleAltHide = "Hide password",
+                isRememberEnabled = false,
+                staticryptConfig = {"staticryptEncryptedMsgUniqueVariableName":"ad31d84c71b4e21f484b15bef89eb26434c6de491285e94bab4cfaeb1c543a564d0667736fc816243cf85aec1088fd4f9ce22bdec09794085ded5e37d8df8261ec81c15876016e53e48007e02214c9fbb8c0796aee7140c922887086ee112b23774cd9803c80e95eda830d891ef555442631ce9d256a8a182ba7189ae9d52faeefecc0fcc6e856c254b8c5981510b560a70aafba1452714c3c5387ad04c0928e97a7b4f7a7af53f87fd924b8fa7df7d4568ef891543cb81751a0cf5acb2bdd7634c9342825b738c001b04d0ce891c0a47588ecf753c1116310127bb89fb8cfa5ed7ba133c90031705e868e3b7f2e8f75f31dda094e5b8d8eda22eab5fcebc5ee3b730ddad28bd828ddc705085d7bac66c0701b35928eb9636b2070e8ba0c47e33cf71865a774b7efa3523d314906ed61c633e18a84bf24ca4d29455b0fd44a29e364ae7e307016d40a4e099571e3cf2cabcf9659dddcebd4b0a10ee3b36f20076847d39c3e3543b84a5f5b4b031241d19ae3b08b9d4ad4c0bf0b2a64935e81bb87fc7a6c3003860f92b25a908ce0ad5ef685ecad503ce1202b53807c3b006d78d3a0a9a69277280b6aa1b0815879bf5307fd68e4e0f5926e1fcf44b9bd2449ecd4a5ad8a0b0e05a9d001b712de5e76fed4e111e052c1edbea69aa90129344a7211cd7b02ab81d50de94ecb01cc464d21c8a4fb38705119789a3bfea91bdfe4c2a48662f23086909d09dcd5de5d759b151c618b5d636962e37f6b33c710288e7a2714d656eb17394dab7f29303370ece374650fb34e48e616cf13c6343c827d14e2c62922d4d0672d8f7af92629ba7af840eb5e675db6400197c616f6869ed0ca19f10520f8b8b36316228e57c1c6b1bf6304f468326311fa7aca1dc9f790a91e373fe0531bdfb3bbe65314e3e7ccbd65fa76e6ace4267ceb63db8d192174d7e570be654bdd6d8e9fd0fa5f49f55ac6358fa81f3bcf36c53b1a601e978b22f1bce283974253e64476d837a0830a8a2f9c62c5c39816fa967757391090de899c11c7f758f22fb4e115dfb723775b3fa0cf2015c10147630943b8f64f2564f8824275b090d6a9eeb2216d51a0fdd13f2d3a3b431800c59a4217eda682555b4c2775f0560db33aea92e3af7e650420baff04eca237fa4905ce70dad9af8e5a191ddb68ea3984ceb71256d7c45c582e0db0adb9f863fe1159d90ba36372ca5850b87b576ed6a43149296df1c33eb8aac2bface96d8064061f99e194786447e88338066a8d98981cb06e26cc6468afd7094f3f","isRememberEnabled":false,"rememberDurationInDays":0,"staticryptSaltUniqueVariableName":"5912d27d0ce6da9ad99507d8e3eb665a"};
 
             // you can edit these values to customize some of the behavior of StatiCrypt
             const templateConfig = {
