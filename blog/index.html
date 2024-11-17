@@ -1,8 +1,3 @@
-<?php
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-echo time();
-?><a href="http://google.com">aaaaaaaaaaaaa</a>
 <!DOCTYPE html>
 <html class="staticrypt-html">
     <head>
@@ -12,8 +7,8 @@ echo time();
         <link rel="stylesheet" href="../css/style.css" type="text/css"/>
 
         <!-- do not cache this page -->
-        <meta http-equiv="Cache-Control" content="max-age=0" />
-        <meta http-equiv="Cache-Control" content="no-cache, no-store" />
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
         <meta http-equiv="expires" content="0" />
         <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
         <meta http-equiv="pragma" content="no-cache" />
@@ -581,9 +576,6 @@ function init(staticryptConfig, templateConfig) {
         const queryParams = new URLSearchParams(window.location.search);
         if (queryParams.has(logoutKey)) {
             clearLocalStorage();
-            document.getElementById("staticrypt_loading").classList.add("hidden");
-            document.getElementById("staticrypt_content").classList.remove("hidden");
-            document.getElementById("staticrypt-password").focus();
             window.location.href = "../";
             return true;
         }
@@ -592,9 +584,6 @@ function init(staticryptConfig, templateConfig) {
         const hash = window.location.hash.substring(1);
         if (hash.includes(logoutKey)) {
             clearLocalStorage();
-            document.getElementById("staticrypt_loading").classList.add("hidden");
-            document.getElementById("staticrypt_content").classList.remove("hidden");
-            document.getElementById("staticrypt-password").focus();
             window.location.href = "../";
             return true;
         }
@@ -683,7 +672,7 @@ exports.init = init;
                 templateToggleAltShow = "Show password",
                 templateToggleAltHide = "Hide password",
                 isRememberEnabled = true,
-                staticryptConfig = {"staticryptEncryptedMsgUniqueVariableName":"bc2acc6cc072bf4ca4514ccbb94a1a89dc1f180cbdba37d0d8e6e68616d0778296079560bf487c1c571bc9d9af132b2c79c6f39eabc4dd9518f35e24c4ca268136d20bee67676a8ba2d21eb21ce521be4dcb3ce2ad3627695638bcb4ee6e17f781ca3feb4b05fd96af1ef18f5f1a68f072486f9de2d9505983c5c5a15ef371ee08ae75c819e750c7ee36c5d2c1c955555ad7a2187daf1eb53750d2b1b6e16764b1e55198d3fa8df28cc28117ab434e6b773a5d66ba3141ab95b2ec41cbd40b7eb53a81bba50e8666d7343bc84e601a3e04d800497419fb2ab70384f93dbe557ca1fbf3e9d3247d95463213534345530e6a32e9121055e441599470b9cfe8de4358b0741cc742dcdd64360adfbe9c522417cfe234bb7385e166ca5e95e044abdfd408bf385f6a151331e83aafcecb3d49acd3a6e836eb4de8c996376cf9172c8c049771e7e3021c85b72fad1096d1cda714ffd9df876d7aa7de4854a439eee77895e06d6745f9763d92f20728dffb9621b6a2621fbc68c6f992d158f9a53aef56a122df20fdabc1242c00b5fac3ccfa418f4aaa3cc0e02a93fd4740b457c3c4654ef11541ad63648f81341eee32ad7f4e84532fd004ff6d3b0f1a89b6f56f518bbea06c9f1138f9f0e93b5a115c2d7341b05b3e43af945acb5f0e951e14879a5a38a4998a88678187b78ca1ef2ef62990875348cb752a46e9772979ae49ea5aa764ddff0ffe0f8d367c7addc93f022c6096d8b160c199146f1213b861a58da437ce626e087e7f9fcc87fa0f716f54fd49a30b2b27fc0737401c9934987eec2fcd902d8fd1d09e2fb953dc20e8bfd0b7f37455292674bfd495544949cbd6ea7ce3bbc2ee263966d2928edf62b517bf01914a1f4cded74e4faa740fa628394adcc24054cab93f84d65faf654d993162b8418553ca3f9fd5dc7bad186712d2341ab08fc3a432177ad34d287db2250d7456146d45e0d97e54601e81e73d6be5feee55203ecdf25594e8cd78dd9971356cbb131d8cfb27eade35d29c605944aaf3886cdeb3a689284c8f3fe7cf38151d9d3590e1e4ec7d02b293506999d3e509fcc3e99f96da25a2b335fa0e91051f2f58823e25b6de6b85ac0cce14e3d014ba62f07491c136dbc8f734810a893264914203810531af004029845c1d22efb91fc0115c6f9aa0fc464454b7cca8e982fa517ab8c1027f9b754e54c6e08d504fd312876d6e3328fb142925a35a9a37914e974c33913626d288e6225e88127a80ac0c8e8ec8a3e4fc4c391a4b579b6464bf379aab81c605814d9dbb24c60b058ed73499de9266bcdf1ab11348c83b7792f3d54d280c187f44f8c328159501345f72e4dc099c43cc92c1942a4a70fdeffeccd3c863eb580986c7755f45f8fe3a4d0556cf54b016f4cbc10b43ba5734279f6c9a7c16cb80f64101d25251d2080e3214a3c04b","isRememberEnabled":true,"rememberDurationInDays":0,"staticryptSaltUniqueVariableName":"5912d27d0ce6da9ad99507d8e3eb665a"};
+                staticryptConfig = {"staticryptEncryptedMsgUniqueVariableName":"b9058bdbf9c6d5c51c4b01319bdfc381e401288398087c5d44db5dc5d8e94ba246c728074a99a79594136da9b1bd1abacd144750b6becf96d515acba43c10ae01e4ae5c849a36c5ffaca95718f4c7a10f61e5b0351066fb0d04d605f99d83f3cca0a2b4e795c3caf0a31c4ddc023098e3c5c69234120959274b4b336bbb983e6015553c668ce2d8e17302cdebb029b6ec5ea96078fba6ecb7fb3ad346a9c35ce734e023b82dd0b85e558d324f97a7fa11a7170dd138a8dfeeee769a07aee834088919259210d78082c55f76576ad56a051eac470e9d729b480f0f75a457d9a263d28f3272fa581223b19086151aab8753e9829026e889388b2f246a7bae7bf03c20c538e7cc5c8f7a7b75ffcb6532835b97a36b78b3bee49a1327697ca84f776487750abecca000038d7bcae2be7e9e6827f2d7c4395361a0e3eeb5fddffb7f220651adfa1e9a996dfe99be726f189a2a30088c882d357df8108509a9649b8b2d183117b57beab4b09536a31dd3cb72a6291057ed5c6f18f7d82b0c7080a4351b00881b8ab874308f9bf80d1324f9fb94d05c830d768a68a407516727a91106cc80096bb090a6c3b2848ed1fa7675d48d9827ad72f089fd457e9325e3846bf52f8216830a54db728d97306c412a72d6f6ca222f0d4093e198406e83303d7ce7679af46ce657148a09310692785dbee0cab307726270e2e71b3d9f42e3756f8e23b2ab9f972f5ffce2e4c02986c8c4bb773e281209cb7416ccd2f9596fec51e87ea1370063d67124c218a37a9425b52c64febd7189be8032ac7a77d4b811edc88e34dc3086ebdcbbd54f79b35ab659f01b952ae2a8b65c332b9e97be22d2784caa82096d588e4becfe96d885ebae170e89d512c91cd079dba037baa4ac68213a7301333633de20d4778894c327b51d23788ac69d722f625c4b535cf4fdb9b109f823585be5d22af813f72e83b27cc170220f9319e59d6d098a898f0b49b132f9b1f34fecac7796686b4eda4b3b2a95284ddcd49fdeafb584ea87fb45164e787c1415e1f00dc34bbfefe864d0c0f85f92cc206907667596c6c2116719f0006d8f559c697464b3e16f2aaf6bc95ae426206c6f1da12e8725513190946a96966b4c659d281f2cac662389304d0d65a202bb64bcaa0758e3eb54e4915c99c3dfeee56b4d2747fccb769a415fe7e8836495c2ff2279f2e10d3a9cf94f8749d7564e0797b67bd0afd790092ae4dd39cbcf4dcb7ad250ade3017f3eb9045001652df1ac0dc742d3de740cceeac987d5a0693f26de94b7f1bc560105a08a26332104ac2e3f1597b49a259a2ceaba19627f1f9c09988bfabadb33c8d241aea0f1a4229bef20679cc496fee84d51084ff62e73b08d2a0feedca3f4f88750a2316996685d1ff2ba89bbdbdc7cc83566589c26db0362c8256cc4c7bbc75c4b23254f9e2f0cbf7c676f5e3f6d395bb7aa05628684ee05ba2bc986ffddcb131188c61f02929bdb9a63779bb0872af0d351fd96ed7fcf705","isRememberEnabled":true,"rememberDurationInDays":0,"staticryptSaltUniqueVariableName":"5912d27d0ce6da9ad99507d8e3eb665a"};
 
             // you can edit these values to customize some of the behavior of StatiCrypt
             const templateConfig = {
