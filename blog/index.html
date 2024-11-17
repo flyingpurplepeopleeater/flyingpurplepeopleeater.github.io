@@ -585,7 +585,8 @@ function init(staticryptConfig, templateConfig) {
         const hash = window.location.hash.substring(1);
         if (hash.includes(logoutKey)) {
             clearLocalStorage();
-            window.location.href = "../";
+            window.history.back();
+            window.location.reload(true);
             return true;
         }
 
