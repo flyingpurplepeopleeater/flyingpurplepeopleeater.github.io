@@ -321,7 +321,8 @@ div:nth-last-child(-n+4)#photoboxbig {
 	flex:1;
 }
 
-
-
+.hidden {
+	display: none !important;
+}
 
 
