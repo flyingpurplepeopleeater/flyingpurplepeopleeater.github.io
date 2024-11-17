@@ -576,6 +576,7 @@ function init(staticryptConfig, templateConfig) {
         const queryParams = new URLSearchParams(window.location.search);
         if (queryParams.has(logoutKey)) {
             clearLocalStorage();
+            window.location.href = "../";
             return true;
         }
 
@@ -583,6 +584,7 @@ function init(staticryptConfig, templateConfig) {
         const hash = window.location.hash.substring(1);
         if (hash.includes(logoutKey)) {
             clearLocalStorage();
+            window.location.href = "../";
             return true;
         }
 
