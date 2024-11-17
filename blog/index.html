@@ -576,6 +576,7 @@ function init(staticryptConfig, templateConfig) {
         const queryParams = new URLSearchParams(window.location.search);
         if (queryParams.has(logoutKey)) {
             clearLocalStorage();
+            window.history.back();
             window.location.reload(true);
             return true;
         }
