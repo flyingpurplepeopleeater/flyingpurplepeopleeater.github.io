@@ -68,14 +68,14 @@
         </div>
 
         <script>
-            
+
 window.addEventListener( "pageshow", function ( event ) {
   var historyTraversal = event.persisted || 
                          ( typeof window.performance != "undefined" && 
                               window.performance.navigation.type === 2 );
   if ( historyTraversal ) {
     // Handle page restore.
-    window.location.reload();
+    window.location.reload(true);
   }
 });
             // these variables will be filled when generating the file - the template format is 'variable_name'
