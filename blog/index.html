@@ -576,8 +576,10 @@ function init(staticryptConfig, templateConfig) {
         const queryParams = new URLSearchParams(window.location.search);
         if (queryParams.has(logoutKey)) {
             clearLocalStorage();
-            window.history.back();
-            window.location.reload(true);
+            document.getElementById("staticrypt_loading").classList.add("hidden");
+            document.getElementById("staticrypt_content").classList.remove("hidden");
+            document.getElementById("staticrypt-password").focus();
+            window.location.href = "../";
             return true;
         }
 
@@ -585,7 +587,10 @@ function init(staticryptConfig, templateConfig) {
         const hash = window.location.hash.substring(1);
         if (hash.includes(logoutKey)) {
             clearLocalStorage();
-            window.location.reload(true);
+            document.getElementById("staticrypt_loading").classList.add("hidden");
+            document.getElementById("staticrypt_content").classList.remove("hidden");
+            document.getElementById("staticrypt-password").focus();
+            window.location.href = "../";
             return true;
         }
 
