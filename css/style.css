@@ -325,4 +325,8 @@ div:nth-last-child(-n+4)#photoboxbig {
 	display: none !important;
 }
 
-
+hr {
+	color: black;
+	border: none;
+	border-top: 1px solid black;
+}
